@@ -1,0 +1,27 @@
+<svg width="20" height="20" stroke="#363636" fill="none" viewBox="22 22 44 44" xmlns="http://www.w3.org/2000/svg"
+     style="animation: progress-rotate 1.4s linear infinite;">
+    <style>
+        @-webkit-keyframes progress-rotate {
+        100% {
+        transform: rotate(360deg);
+        }
+        }
+        @-webkit-keyframes progress-dash {
+        0% {
+        stroke-dasharray: 1px, 200px;
+        stroke-dashoffset: 0px;
+        }
+        50% {
+        stroke-dasharray: 100px, 200px;
+        stroke-dashoffset: -15px;
+        }
+        100% {
+        stroke-dasharray: 100px, 200px;
+        stroke-dashoffset: -125px;
+        }
+        }
+    </style>
+    <circle
+        style="animation: progress-dash 1.4s ease-in-out infinite;stroke-dasharray: 80px, 200px;stroke-dashoffset: 0;"
+        cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle>
+</svg>

@@ -1,0 +1,43 @@
+.order-products {
+    display: table;
+    width: 100%;
+}
+.op-row {
+    display: table-row;
+}
+.op-row > * {
+    display: table-cell;
+    border-top: 1px solid #f4f4f4;
+    padding: 5px 10px;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+.op-row > * > * {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0;
+}
+
+.op-col-name {
+    width: auto;
+}
+.op-col-name h4 {
+    font-size: 16px;
+}
+.op-name {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.op-col-price {
+    width: 20%;
+    text-align: right;
+}
+.op-col-count {
+    width: 100px;
+}
+.op-col-del {
+    width: 30px;
+}

@@ -1,0 +1,121 @@
+/* start-delivery from style.css/delivery */
+
+.select-pvz-link,
+.back-to-list-pvz {
+  color: #2196f3;
+  text-decoration: underline;
+}
+
+.back-to-list-pvz {
+  display: none;
+}
+
+.d-sam-item-data-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.back-to-list-pvz {
+  display: none;
+}
+
+/* Окно со списком ПВЗ*/
+.blocker {
+  z-index: 110 !important;
+}
+.jquery-modal {
+  z-index: 110;
+}
+.modal {
+  padding: 10px 15px !important;
+  width: 100% !important;
+}
+.modal-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.selected-address-pvz {
+  display: none;
+  padding: 10px;
+  background-color: #fdfd79;
+}
+
+.ds-name {
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+.footer-selected-pvz {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.address-pvz-item {
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1em;
+  padding: 0 1em 0.2em;
+}
+
+.address-pvz-item span {
+  font-weight: 300;
+}
+
+.modal-header-title {
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.modal a.close-modal-2 {
+}
+
+.close-modal {
+  display: none !important;
+}
+
+.footer-selected-pvz a {
+  display: none;
+}
+
+.loader,
+.loader i {
+  display: flex;
+}
+
+.loader i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pointer-label.low {
+  left: 0 !important;
+}
+
+.pointer-label.high {
+  left: auto !important;
+  right: 0 !important;
+}
+
+.model-is-discount-1:before {
+  content: "СУПЕР ЦЕНА";
+  display: block;
+  position: absolute;
+  color: #000;
+  background: #f8cd4f;
+  padding: 3px;
+  top: 180px;
+  right: 50%;
+  width: 97px;
+  transform: translateX(50%);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+@media (max-width: 720px) {
+  .model-is-discount-1:before {
+    top: 140px;
+  }
+}

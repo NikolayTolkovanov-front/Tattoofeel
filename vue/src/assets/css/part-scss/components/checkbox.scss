@@ -1,0 +1,70 @@
+@import '../vars';
+
+.checkbox,.checkbox-f, .checkbox-link {
+  position: relative;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 5px 0 5px 20px;
+  color: $black;
+  cursor: pointer;
+  display: block;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    top: -20px;
+  }
+
+  i {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #c4c4c4;
+    left: 0;
+    top: 5px;
+    &:after {
+      display: none;
+      content: '';
+      border-bottom: 1px solid $black;
+      border-right: 1px solid $black;
+      transform: rotate(45deg);
+      position: absolute;
+      top: 2px;
+      left: 5px;
+      width: 4px;
+      height: 6px;
+    }
+  }
+
+  input:checked + i, &.-act i {
+    background: $orange;
+    &:after {
+      display: block;
+    }
+  }
+
+  &.-disabled {
+    opacity: 0.5;
+  }
+  input[disabled] + i:after {
+      display: none;
+  }
+}
+
+.checkbox-f {
+  font-size: 14px;
+
+  i {
+    background: $lightGrayD;
+    border-radius: 50%;
+  }
+
+  a {
+    border-bottom: 1px solid $black;
+
+    &:hover {
+      border: 0;
+    }
+  }
+}

@@ -1,0 +1,239 @@
+@import 'vars';
+
+$footerItemPaddingBot: 40px;
+$footerItemPaddingLR: 15px;
+
+.footer-box {
+  background: $footBgColor;
+  padding: 55px 0 5px;
+}
+
+.footer {
+  margin: 0 (-$footerItemPaddingLR);
+  color: $footTextColor;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &__left {
+    order: -100;
+    display: flex;
+    flex: 0 0 330px;
+    max-width: 330px;
+    padding: 0 $footerItemPaddingLR $footerItemPaddingBot;
+
+    &__logo {
+      flex: 0 0 90px;
+    }
+    &__desc {
+      font-size: 12px;
+
+      &__soc {
+        display: block;
+        margin-top: 7px;
+      }
+
+      &__soc a {
+        background: #fff;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        margin-right: 15px;
+
+        .icon {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+  &__pay {
+    order: -90;
+    padding: 0 $footerItemPaddingLR $footerItemPaddingBot;
+
+    &__link {
+      margin-top: 16px;
+      line-height: 1;
+      display: flex;
+      justify-content: space-between;
+      a {
+        border-left: 1px solid $orange;
+        padding: 0 0 0 10px;
+      }
+    }
+    &__img {
+      margin-top: 3px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__spr__contact {
+    order: -85;
+    flex-basis: 0;
+  }
+
+  &__contact {
+    order: -80;
+    padding: 0 $footerItemPaddingLR $footerItemPaddingBot;
+
+    & > * {
+      display: block;
+      white-space: nowrap;
+      height: 22px;
+      line-height: 22px;
+      margin-bottom: 13px;
+
+      .icon {
+        vertical-align: middle;
+        margin-right: 9px;
+      }
+    }
+
+    &__tel {
+      font-size: 18px;
+      font-weight: 900;
+
+      .icon {
+        margin-right: 4px;
+      }
+    }
+  }
+
+  &__spr__contact__phone {
+    order: -75;
+    flex-basis: 0;
+  }
+
+  &__contact__phone {
+    order: -74;
+  }
+
+  &__menu {
+    order: -70;
+    padding: 0 $footerItemPaddingLR $footerItemPaddingBot;
+    flex: 0 0 370px;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      box-sizing: border-box;
+      flex: 0 0 33%;
+      border-left: 1px solid $orange;
+      padding: 0 0 0 10px;
+      margin-bottom: 18px;
+      line-height: 1;
+    }
+  }
+
+  &__copy {
+    order: -60;
+    flex: 0 0 370px;
+    padding: 0 $footerItemPaddingLR $footerItemPaddingBot;
+    font-size: 12px;
+
+    address {
+      display: block;
+      padding-top: 20px;
+      font-size: 12px;
+      text-align: left;
+    }
+  }
+
+  &__btn {
+    order: -50;
+    text-align: right;
+    color: $brown;
+    font-weight: 700;
+    white-space: nowrap;
+    padding: 0 $footerItemPaddingLR $footerItemPaddingBot;
+
+    &__link {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #7C7C7C;
+      border-bottom: 1px solid #7C7C7C;
+      display: block;
+      &:hover {
+        border: 0;
+      }
+    }
+  }
+
+  @media (max-width: 1079.98px) and (min-width: 1040px) {
+    &__menu {
+      flex: 0 0 100%;
+      box-sizing: border-box;
+      li {
+        flex: 0 0 auto;
+        margin-right: 30px;
+      }
+    }
+  }
+  @media (max-width: 1039.98px) and (min-width: 830px) {
+    &__spr__contact__phone {
+      flex-basis: 100%;
+    }
+    &__menu {
+      order: -74;
+      flex: 0 0 60%;
+      box-sizing: border-box;
+    }
+    &__contact__phone {
+      order: -60;
+    }
+  }
+  @media (max-width: 829.98px) {
+    &__spr__contact {
+      flex-basis: 100%;
+    }
+    &__menu {
+      flex: 0 0 100%;
+      box-sizing: border-box;
+      li {
+        flex: 0 0 auto;
+        margin-right: 30px;
+      }
+    }
+  }
+  @media (max-width: 767.98px) {
+    flex-direction: column;
+    align-items: center;
+    min-width: 290px;
+    max-width: 380px;
+    margin: 0 auto;
+
+    &__left {
+      flex: 0 0 100%;
+    }
+
+    &__copy {
+      flex: 0 0 100%;
+      text-align: center;
+
+      address {
+        text-align: center;
+      }
+    }
+
+    &__spr__contact {
+      flex-basis: 0;
+    }
+    &__spr__contact__phone {
+      flex-basis: 0;
+    }
+    &__menu {
+      display: none;
+    }
+
+    &__btn {
+      order: -63;
+    }
+    &__pay {
+      order: -67;
+    }
+  }
+}
+

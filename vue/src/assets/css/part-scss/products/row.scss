@@ -1,0 +1,372 @@
+@import '../vars';
+
+@mixin btn {
+  box-sizing: border-box;
+  font-family: "Museo Sans Cyrl", sans-serif;
+  display: inline-block;
+  background: #f8cd4f;
+  font-weight: 700;
+  padding: 8px 15px;
+  cursor: pointer;
+  border: 0;
+  text-align: center;
+  transition: box-shadow 0.3s;
+}
+
+.product-row {
+  position: relative;
+  user-select: none;
+
+  &__next, &__prev {
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    width: 60px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    margin-top: -19px;
+    cursor: pointer;
+    background: $white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+
+    &.-dis {
+      cursor: default;
+      .icon {
+        fill: $gray;
+        opacity: .4;
+      }
+    }
+  }
+  &__next {
+    right: -30px;
+    left: auto;
+  }
+
+  &__dots {
+    padding: 0;
+    margin: 21px 0 0;
+    text-align: center;
+    display: none;
+
+    $homeSliderColorDot: #c4c4c4;
+    $homeSliderColorDotActive: #f8cd4f;
+
+    li {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 3px;
+      position: relative;
+      overflow: hidden;
+
+      &:before {
+        content: '';
+        z-index: 0;
+        display: block;
+        width: 8px;
+        height: 8px;
+        background: $homeSliderColorDot;
+        margin: 2px 0 0 2px;
+      }
+
+      &.-act {
+        &:before {
+          width: 12px;
+          height: 12px;
+          background: $homeSliderColorDotActive;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    &__next {
+      right: -17px;
+    }
+    &__prev {
+      left: -17px;
+    }
+  }
+  @media (max-width: 575.98px) {
+    &__next, &__prev {
+      display: none;
+    }
+    &__dots {
+      display: block;
+    }
+  }
+
+  &__next svg {
+    position: relative;
+    top: 3px;
+    left: 3px;
+  }
+  &__prev svg {
+    transform: rotate(180deg);
+    position: relative;
+    top: 3px;
+    left: -3px;
+  }
+
+  &__wrap {
+    overflow: hidden;
+    margin: -20px;
+    padding: 20px;
+  }
+}
+
+.product-row-list {
+  display: flex;
+  align-items: stretch;
+  transition: transform 0.5s 0s;
+
+  &._tile {
+   flex-flow: wrap;
+  }
+
+  &__row {
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__item {
+    flex: 0 0 24%;
+    margin-right: 1.3333%;
+
+    background: $white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    padding: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+
+    &__sale {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: $red;
+      color: $white;
+      font-size: 18px;
+      font-weight: 900;
+      padding: 3px 18px 3px 8px;
+      overflow: hidden;
+
+      &:after {
+        content: '';
+        position: absolute;
+        background: $white;
+        right: -10px;
+        top: -4px;
+        bottom: -8px;
+        width: 18px;
+        transform: rotate(22deg);
+      }
+    }
+
+    &__top-a {
+      display: block;
+    }
+    &__img {
+      display: block;
+      // padding-top: 85%;
+      padding-top: 200px;
+      background: no-repeat center;
+      background-size: contain;
+      // margin: -20px -20px 10px;
+      margin: 0 auto 10px;
+    }
+
+    &__head {
+      color: $brown;
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 900;
+      height: 78px;
+      overflow: hidden;
+      text-align: center;
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      & > span {
+        flex: 0 0 100%;
+      }
+    }
+
+    &__art {
+      transition: margin-bottom .3s;
+      display: block;
+      color: $gray;
+      height: 40px;
+      overflow: hidden;
+      /* text-overflow: ellipsis; */
+      /* white-space: nowrap; */
+      margin: 16px 15% 0;
+    }
+
+    &__price-box {
+      height: 34px;
+      overflow: hidden;
+      white-space: nowrap;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    &__price-old, &__price {
+      display: block;
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    &__price-old {
+      text-decoration: line-through;
+      font-weight: 400;
+      font-size: 16px;
+    }
+
+    &__cart {
+      display: inline-block;
+      margin: 15px 0;
+      font-size: 16px;
+      padding: 8px 25px;
+
+      span.__empty {
+        @include btn;
+        background: none;
+        color: $gray;
+        box-shadow: none !important;
+      }
+
+      .icon {
+        vertical-align: middle;
+        margin-left: 3px;
+      }
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    &__item {
+      flex: 0 0 31%;
+      margin-right: 3.5%;
+    }
+  }
+
+  @media (max-width: 724.98px) {
+    &__item {
+      flex: 0 0 48%;
+      margin-right: 4%;
+
+      &__head {
+        height: 78px;
+      }
+
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    &__item {
+      padding: 10px 10px 0;
+
+      .btn {
+        padding: 3px 12px;
+        font-size: 14px;
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      &__sale {
+        top: 20px;
+        background: $orange;
+        color: $black;
+        font-size: 15px;
+        font-weight: 700;
+        padding: 3px 8px;
+
+        &:after {
+          display: none;
+        }
+      }
+
+      &__head {
+        font-size: 16px;
+        font-weight: 600;
+        height: 78px;
+      }
+
+      &__art {
+        display: none;
+      }
+
+      &__price-old {
+        font-size: 15px;
+      }
+
+      &__price {
+        font-size: 15px;
+        font-weight: 400;
+      }
+
+      &__price-box {
+        height: 42px;
+      }
+    }
+  }
+
+  @media (max-width: 420px) {
+    &__item {
+      &__price {
+        font-family: Museo Sans Cyrl, sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  //nth-child
+  @media (min-width: 992px) {
+    &__item:nth-child(4n) {
+      margin-right: 5%;
+    }
+  }
+
+  @media (max-width: 991.98px) and (min-width: 725px) {
+    &__item:nth-child(3n) {
+      margin-right: 5%;
+    }
+  }
+
+  @media (max-width: 724.98px) {
+    &__item:nth-child(2n) {
+      margin-right: 8%;
+    }
+  }
+
+}
+
+
+@media (max-width: 720px) {
+  .product-row-list__item__img {
+    padding-top: 100px;
+  }
+
+  .product-list__item__img {
+    padding-top: 150px;
+  }
+
+  .product-row-list__item__cart span.__empty {
+    display: block;
+    padding: 0;
+  }
+}

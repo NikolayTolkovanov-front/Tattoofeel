@@ -1,0 +1,99 @@
+@import '../_vars';
+
+.articles {
+  &__item {
+    margin-bottom: 20px;
+    display: flex;
+  }
+  &__item__pict {
+    background: @white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    flex: 0 0 200px;
+    height: 180px;
+    position: relative;
+
+    & > div {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: no-repeat center;
+      background-size: cover;
+    }
+  }
+  &__item__desc {
+    margin-left: 30px;
+
+    &__head {
+      justify-content: space-between;
+
+      span {
+        font-size: 16px;
+        font-weight: 400;
+        color: @gray;
+      }
+    }
+
+    .h1, .h2, .h3 {
+      margin-right: 30px;
+    }
+
+    &__full-text {
+      display: none;
+    }
+  }
+
+  &__item.-open &__item__desc {
+    &__full-text {
+      display: block;
+    }
+  }
+
+
+  &__item__more {
+    text-align: right;
+    margin-top: 10px;
+    position: relative;
+    top: -20px;
+  }
+
+
+  & + .more-btn-box {
+    margin-top: 40px;
+    margin-bottom: -5px;
+  }
+
+  @media (max-width: 767.98px) {
+    & + .more-btn-box {
+      margin-top: 20px;
+      margin-bottom: 15px;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    &__item {
+      flex-direction: column;
+      margin-top: 30px;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    &__item__pict {
+      flex: 0 0 100%;
+      padding-top: 90%;
+      position: relative;
+      margin-bottom: 20px;
+    }
+    &__item__desc {
+      margin-left: 0;
+    }
+    &__item__more {
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+}
+

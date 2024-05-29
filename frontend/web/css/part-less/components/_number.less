@@ -1,0 +1,67 @@
+@import '../_vars';
+
+.number {
+  display: inline-block;
+  user-select: none;
+
+  &__value {
+    font-size: 13px;
+    padding: 0 5px;
+    min-width: 32px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: monospace;
+    font-weight: bold;
+  }
+
+  &__minus, &__plus {
+    cursor: pointer;
+    vertical-align: middle;
+    display: inline-block;
+    background: #f1f1f1;
+    border-radius: 2px;
+    width: 14px;
+    height: 14px;
+    text-align: center;
+    line-height: 14px;
+  }
+
+  &._flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  ._flex &__minus, ._flex &__plus {
+    margin: 0;
+  }
+  &._big {
+    line-height: 45px;
+  }
+  ._big &__value {
+    font-size: 18px;
+    padding: 0 20px;
+  }
+  ._big &__minus, ._big &__plus {
+    font-size: 24px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    background: #fbfbfb;
+  }
+
+  &._avg {
+    line-height: 30px;
+  }
+  ._avg &__value {
+    font-size: 15px;
+    padding: 0 10px;
+  }
+  ._avg &__minus, ._avg &__plus {
+    font-size: 18px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    background: #fbfbfb;
+  }
+}

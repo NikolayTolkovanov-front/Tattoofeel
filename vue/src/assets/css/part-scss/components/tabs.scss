@@ -1,0 +1,48 @@
+@import '../vars';
+
+.tabs {
+  &-nav {
+    display: flex;
+
+    a {
+      font-size: 15px;
+      font-weight: 700;
+      color: $black;
+      background: $lightGray;
+      padding: 8px 24px;
+      margin-left: 20px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+      &.-act {
+        background: $orange;
+      }
+    }
+  }
+
+  &-content {
+    padding: 32px 32px;
+    background: $lightGray;
+    font-size: 14px;
+    color: $black;
+
+    &__item {
+      display: none;
+    }
+    &__item.-open {
+      display: block;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    &-nav {
+      a {
+        font-size: 14px;
+        font-weight: 400;
+        padding: 4px 12px;
+        margin-left: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.grid-right-col {
+  display: flex;
+
+  &__right {
+    flex: 0 0 255px;
+  }
+  &__main {
+    padding-right: 70px;
+    flex: 1;
+  }
+
+  @media (max-width: 991.98px) {
+    flex-direction: column;
+    &__aside {
+      flex: 0 0 100%;
+      padding-bottom: 40px;
+    }
+    &__main {
+      padding-right: 0;
+    }
+  }
+
+  @media (max-width: 420px) {
+    &__main {
+      margin-bottom: 30px;
+    }
+  }
+}

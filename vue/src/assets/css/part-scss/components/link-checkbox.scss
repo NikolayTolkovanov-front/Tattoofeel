@@ -1,0 +1,40 @@
+@import '../vars';
+
+.link-checkbox {
+  position: relative;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 4px 0 4px 20px;
+  color: $black;
+  cursor: pointer;
+  display: block;
+
+  i {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #c4c4c4;
+    left: 0;
+    top: 5px;
+    &:after {
+      display: none;
+      content: '';
+      border-bottom: 1px solid $black;
+      border-right: 1px solid $black;
+      transform: rotate(45deg);
+      position: absolute;
+      top: 2px;
+      left: 5px;
+      width: 4px;
+      height: 6px;
+    }
+  }
+
+  &.-act i {
+    background: $orange;
+    &:after {
+      display: block;
+    }
+  }
+}

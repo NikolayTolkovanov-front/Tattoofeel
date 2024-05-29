@@ -1,0 +1,24 @@
+.seo-snippet .seo-snippet-link {
+    color: #1a0dab;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: small;
+    line-height: 1.58;
+}
+
+.seo-snippet .seo-snippet-title {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.seo-snippet .seo-snippet-url {
+    color: #222;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.seo-snippet .seo-snippet-desc {
+    color: #222;
+    font-size: 18px;
+}
+

@@ -1,0 +1,65 @@
+@import 'legacy-libs/font-awesome.min';
+@import 'legacy-libs/swiper';
+
+
+
+@import 'mobile-scss/fonts';
+@import 'mobile-scss/jquery.ui';
+@import 'mobile-scss/reset';
+@import 'mobile-scss/slick';
+@import 'mobile-scss/jquery.range';
+
+
+
+@import 'part-scss/common';
+@import 'part-scss/container';
+@import 'part-scss/header';
+@import 'part-scss/menu';
+@import 'part-scss/breadcrumbs';
+@import 'part-scss/footer';
+
+@import 'part-scss/components/slick-dots.scss';
+@import 'part-scss/components/img';
+@import 'part-scss/components/box';
+@import 'part-scss/components/grid-left-col';
+@import 'part-scss/components/grid-right-col';
+@import 'part-scss/components/slider-price';
+@import 'part-scss/components/tabs';
+@import 'part-scss/components/checkbox';
+@import 'part-scss/components/link-checkbox';
+@import 'part-scss/components/number';
+@import 'part-scss/components/section-box';
+@import 'part-scss/components/articles';
+@import 'part-scss/components/question';
+@import 'part-scss/components/static-page';
+@import 'part-scss/components/head-block';
+@import 'part-scss/components/pop-mes';
+@import 'part-scss/components/block-typo';
+@import 'part-scss/components/contact';
+@import 'part-scss/components/sorted';
+
+@import 'part-scss/home/slider';
+@import 'part-scss/home/team';
+@import 'part-scss/home/logos';
+
+@import 'part-scss/categories/filter';
+@import 'part-scss/categories/tile';
+
+@import 'part-scss/products/row';
+@import 'part-scss/products/list';
+@import 'part-scss/products/card';
+
+@import 'part-scss/lk/lk';
+@import 'part-scss/block-by-page';
+
+
+
+@import 'mobile-scss/modal';
+@import 'mobile-scss/back-to-top';
+@import 'mobile-scss/delivery';
+@import 'mobile-scss/pvz-list';
+@import 'mobile-scss/query.modal';
+@import 'mobile-scss/custom';
+
+@import './normalize.scss';
+@import './default.scss';

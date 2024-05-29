@@ -1,0 +1,72 @@
+.one_click-modal {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: rgba(54, 54, 54, 0.75);
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-one-block {
+  background: #fff;
+  padding: 12px;
+  width: 352px;
+}
+
+.modal-one-reset {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-one-reset svg {
+  background: #f8cd4f;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.modal-one-block > span {
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.modal-one-item {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.modal-one-name {
+  font-family: Museo Sans Cyrl, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  color: #363636;
+}
+
+.modal-one-item input {
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(136, 152, 170, 0.15);
+  border: none;
+  margin: 10px 0px;
+  padding: 9px 17px;
+}
+
+#d-desk-sam-both .loader,
+#d-desk-dost-both .loader {
+  opacity: 0;
+}
+
+@media (max-width: 420px) {
+  .modal-one-block {
+    width: 85%;
+  }
+}

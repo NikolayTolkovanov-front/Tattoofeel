@@ -1,0 +1,203 @@
+@import "../vars";
+
+.static-page {
+  &._no-pict &__grid__photo {
+    display: none;
+  }
+
+  &._no-pict &__grid {
+    min-height: 0;
+  }
+
+  &._no-pict &__grid__head,
+  &._no-pict &__grid__desc {
+    padding-right: 0;
+    width: 100%;
+  }
+
+  &__grid {
+    position: relative;
+    min-height: 534px;
+
+    &._has_photo_desc {
+      min-height: 660px;
+    }
+
+    &__photo__desc {
+      height: 300px;
+      overflow: hidden;
+    }
+
+    &__photo__map iframe {
+      width: 100% !important;
+      height: 390px !important;
+    }
+
+    &__head,
+    &__desc {
+      box-sizing: border-box;
+      padding-right: 60px;
+      width: 50%;
+    }
+
+    &__head {
+      margin-bottom: 20px;
+
+      & > span {
+        font-size: 16px;
+        font-weight: 400;
+        color: $gray;
+      }
+    }
+
+    &__desc {
+      font-size: 16px;
+      color: $darkGray;
+
+      & > *:first-child {
+        margin-top: 0;
+      }
+    }
+
+    &__photo {
+      position: absolute;
+      width: 50%;
+      right: 0;
+      top: 40px;
+
+      &._no-dot-grid:before {
+        display: none;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 35%;
+        z-index: 0;
+        // fix it to scss
+        background: url(/img/home-team-bg.png);
+
+        @media (max-width: 767.98px) {
+          bottom: 48%;
+        }
+
+        &__pict {
+          position: relative;
+          margin-top: 110px;
+          width: 85%;
+          padding-top: 57%;
+          margin-bottom: 70px;
+
+          &:after,
+          &:before {
+            content: "";
+            position: absolute;
+            z-index: 10;
+            border: 12px solid $orange;
+            top: -40px;
+            bottom: -40px;
+            left: 55px;
+            right: 65px;
+          }
+
+          &:after {
+            border-right: 0;
+          }
+
+          &:before {
+            border-left: 0;
+            border-top: 0;
+            border-bottom: 0;
+            z-index: 0;
+          }
+
+          & > div {
+            background: no-repeat center;
+            background-size: cover;
+
+            position: absolute;
+            z-index: 5;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      &__grid {
+        min-height: 380px;
+
+        &__head,
+        &__desc {
+          padding-right: 40px;
+          width: 60%;
+        }
+
+        &__photo {
+          width: 40%;
+        }
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      &__grid {
+        min-height: 0;
+
+        &__head,
+        &__desc {
+          padding-right: 0;
+          width: 100%;
+        }
+
+        &__photo {
+          width: 100%;
+          position: relative;
+          margin-bottom: 40px;
+
+          &:before {
+            position: absolute;
+            top: -80px;
+            left: -$containerPaddingMob + 5px;
+            right: -$containerPaddingMob + 5px;
+          }
+          & > div {
+            margin-bottom: 105px;
+            margin-top: 65px;
+            &:after,
+            &:before {
+              left: ($containerPadding - $containerPaddingMob);
+            }
+          }
+
+          & > div.static-page__grid__photo__map {
+            margin-bottom: 0;
+            margin-top: 0;
+            position: relative;
+            top: -40px;
+          }
+          &._map {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 379.98px) {
+      &__grid__photo:before {
+        left: -$containerPaddingMobSm + 5px;
+        right: -$containerPaddingMobSm + 5px;
+      }
+      &__grid__photo > div {
+        &:after,
+        &:before {
+          left: ($containerPadding - $containerPaddingMobSm);
+        }
+      }
+    }
+  }
+}

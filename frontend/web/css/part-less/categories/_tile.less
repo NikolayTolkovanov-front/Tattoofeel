@@ -1,0 +1,227 @@
+@import '../_vars';
+
+.category-tile, .category-tile-title-outer {
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    transition: transform 0.5s 0s;
+  }
+
+  &__empty-list {
+    display: none;
+  }
+
+  &__list > * {
+    flex: 0 0 24%;
+    background: @white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    padding: 0 0 20px;
+    margin-bottom: 15px;
+    transition: top .3s;
+    position: relative;
+    top: 0;
+
+    &._empty {
+      visibility: hidden;
+    }
+
+    &:hover {
+      top: -20px;
+    }
+
+    & > div > div {
+      width: 100%;
+      padding-top: 65%;
+      background: no-repeat center;
+      background-size: contain;
+      margin: 0 0 20px;
+    }
+
+    & > span {
+      display: block;
+      text-align: center;
+      color: @darkGray;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+
+  }
+
+.category-tile {
+  &__list > * {
+    & > div img {
+      display: block;
+    }
+  }
+}
+
+  @media (min-width:992px) {
+    &__list > *:nth-child(4n) + ._empty,
+    &__list > *:nth-child(4n) + ._empty ~ * {
+      display: none;
+    }
+  }
+
+  @media (max-width: 991.98px) and (min-width: 725px) {
+    &__list > * {
+      flex: 0 0 31%;
+    }
+    &__list > *:nth-child(3n) + ._empty,
+    &__list > *:nth-child(3n) + ._empty ~ * {
+      display: none;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    justify-content: space-between;
+    &__list > * {
+      flex: 0 0 48%;
+    }
+    &__list > *:nth-child(2n) + ._empty,
+    &__list > *:nth-child(2n) + ._empty ~ *  {
+      display: none;
+    }
+  }
+
+}
+
+._slider {
+  .category-tile, .category-tile-title-outer {
+
+    &__show-more {
+      text-align: right;
+    }
+
+    &__show-all {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: -20px;
+    }
+
+    &__dots {
+      padding: 0;
+      margin: 21px 0 20px;
+      text-align: center;
+      display: none;
+
+      @homeSliderColorDot: #c4c4c4;
+      @homeSliderColorDotActive: #f8cd4f;
+
+      li {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin: 0 3px;
+        position: relative;
+        overflow: hidden;
+
+        &:before {
+          content: '';
+          z-index: 0;
+          display: block;
+          width: 8px;
+          height: 8px;
+          background: @homeSliderColorDot;
+          margin: 2px 0 0 2px;
+        }
+
+        &.-act {
+          &:before {
+            width: 12px;
+            height: 12px;
+            background: @homeSliderColorDotActive;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    @media (min-width: 992px) {
+      &__list:not(.-open) > *:nth-child(12) ~ * {
+        display: none;
+      }
+    }
+
+    @media (max-width: 991.98px) and (min-width: 725px) {
+      &__list > * {
+        flex: 0 0 31%;
+      }
+      &__list:not(.-open) > *:nth-child(9) ~ * {
+        display: none;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      &__list {
+        flex-wrap: nowrap;
+        justify-content: normal;
+      }
+
+      &__dots {
+        display: block;
+      }
+
+      &__list > * {
+        flex: 0 0 48%;
+        margin-right: 4%;
+
+        &._empty {
+          display: none;
+        }
+      }
+      &__show-more, &__show-all {
+        display: none;
+      }
+    }
+
+    @media (max-width: 767.98px) and (min-width: 576px) {
+      &__list > *:nth-child(2n + 2) {
+        margin-right: 8%;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      &__list > * {
+        flex: 0 0 48%;
+        box-shadow: 0 2px 10px rgba(136, 152, 170, 0.15);
+
+        & > span {
+          font-size: 19px;
+        }
+      }
+    }
+
+  }
+}
+
+.category-tile-title-outer {
+  &__list > * {
+    box-shadow: none;
+    padding: 0;
+
+    & > div {
+      padding: 20px;
+      background: @white;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    & > div > div {
+      margin: 10px 0;
+      padding-top: 75%;
+    }
+
+    & > span {
+      padding: 15px 20px;
+    }
+
+    & > div img {
+      display: block;
+    }
+
+  }
+}

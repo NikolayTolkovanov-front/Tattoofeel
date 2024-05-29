@@ -1,0 +1,42 @@
+.slick-dots {
+  padding: 0;
+  margin: 21px 0 0;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 3px;
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      z-index: 0;
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: $sliderColorDot;
+      margin: 2px 0 0 2px;
+    }
+
+    &.slick-active {
+      &:before {
+        width: 12px;
+        height: 12px;
+        background: $sliderColorDotActive;
+        margin: 0;
+      }
+    }
+
+    button {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      opacity: 0;
+    }
+  }
+}

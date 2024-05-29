@@ -1,0 +1,22 @@
+<?php
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+
+header('Content-Type: text/html; charset=utf-8');
+
+$path = '../../storage/web/source/2f/';
+$json = json_decode(file_get_contents("{$path}import.json", "r"));
+
+foreach($json as $row) {
+    $images = explode(',', $row->{'PICT'});
+
+    foreach ((array)$images as $url) {
+        $fullName = explode('/', $url);
+        $name = array_pop($fullName);
+
+        if (!file_exists($path . $name))
+            file_put_contents($path . $name, file_get_contents($url));
+    }
+}
+die('done');

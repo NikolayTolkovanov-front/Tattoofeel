@@ -1,0 +1,48 @@
+.center {
+  text-align: center;
+}
+.right {
+  text-align: right;
+}
+.left {
+  text-align: left;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+.no-padding-tb {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.no-padding-lr {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.no-padding-top {
+  padding-top: 0 !important;
+}
+.no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+
+.hidden, .hid {
+  overflow: hidden;
+}
+
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+
+.none {
+  display: none !important;;
+
+  @media (max-width: 991.98px) {
+    &-DOWN-MD {
+      display: none !important;;
+    }
+  }
+}

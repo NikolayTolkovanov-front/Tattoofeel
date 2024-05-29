@@ -1,0 +1,22 @@
+.grid-left-col {
+  display: flex;
+
+  &__aside {
+    flex: 0 0 255px;
+  }
+  &__main {
+    padding-left: 30px;
+    flex: 1;
+  }
+
+  @media (max-width: 991.98px) {
+    flex-direction: column;
+    &__aside {
+      flex: 0 0 100%;
+      padding-bottom: 40px;
+    }
+    &__main {
+      padding-left: 0;
+    }
+  }
+}

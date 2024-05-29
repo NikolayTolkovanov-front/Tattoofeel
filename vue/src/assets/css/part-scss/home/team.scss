@@ -1,0 +1,174 @@
+@import '../vars';
+
+.home-team {
+  &__head {
+    padding: 0 0 42px;
+    text-align: center;
+  }
+
+  &__grid {
+    display: flex;
+
+    &__desc {
+      box-sizing: border-box;
+      flex: 0 0 50%;
+      padding-right: 60px;
+
+      &__numbers {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px 0;
+
+        & > span {
+          $teamNumbersTextColors: #7a7a7a;
+
+          box-sizing: border-box;
+          flex: 0 0 50%;
+          font-size: 15px;
+          color: $teamNumbersTextColors;
+          padding: 10px 20px 10px 0;
+
+          a {
+            border-bottom: 1px solid $teamNumbersTextColors;
+            &:hover {
+              border: 0;
+            }
+          }
+
+          & > span {
+            display: block;
+            font-size: 72px;
+            line-height: 1;
+            font-weight: 900;
+            color: $orange;
+          }
+        }
+      }
+
+      &__text {
+        margin: 40px 0 20px;
+        font-size: 18px;
+        color: $darkGray;
+      }
+      &__text__more {
+        font-size: 16px;
+        color: $brown;
+        text-align: right;
+      }
+    }
+
+    &__photo {
+      flex: 0 0 50%;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 31%;
+        z-index: 0;
+        // fix it to scss
+        background: url(/img/home-team-bg.png);
+      }
+
+      & > div {
+        position: relative;
+        margin-top: 110px;
+        width: 85%;
+        padding-top: 57%;
+        margin-bottom: 70px;
+
+        &:after, &:before {
+          content: '';
+          position: absolute;
+          z-index: 10;
+          border: 12px solid $orange;
+          top: -40px;
+          bottom: -40px;
+          left: 55px;
+          right: 65px;
+        }
+
+        &:after {
+          border-right: 0;
+        }
+
+        &:before {
+          border-left: 0;
+          border-top: 0;
+          border-bottom: 0;
+          z-index: 0;
+        }
+
+        & > div {
+          background: no-repeat center;
+          background-size: cover;
+
+          position: absolute;
+          z-index: 5;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    &__head {
+      padding: 0 0 12px;
+      text-align: left;
+      .h1 {
+        font-size: 28px;
+        font-weight: 700;
+      }
+    }
+    &__grid {
+      flex-wrap: wrap-reverse;
+      &__desc {
+        flex: 0 0 100%;
+      }
+      &__photo {
+        flex: 0 0 100%;
+        &:before {
+          left: -$containerPadding + 5px;
+          right: -$containerPadding + 5px;
+        }
+      }
+    }
+  }
+  @media (max-width: 767.98px) {
+    &__grid__desc {
+      padding: 0 ($containerPadding - $containerPaddingMob);
+    }
+    &__grid__photo:before {
+      left: -$containerPaddingMob + 5px;
+      right: -$containerPaddingMob + 5px;
+    }
+    &__grid__photo  > div    {
+      &:after, &:before {
+        left: ($containerPadding - $containerPaddingMob);
+      }
+    }
+  }
+  @media (max-width: 379.98px) {
+    &__grid__desc__numbers {
+      margin-right: -20px;
+    }
+    &__grid__desc {
+      padding: 0 ($containerPadding - $containerPaddingMobSm);
+    }
+    &__grid__photo:before {
+      left: -$containerPaddingMobSm + 5px;
+      right: -$containerPaddingMobSm + 5px;
+    }
+    &__grid__photo  > div    {
+      &:after, &:before {
+        left: ($containerPadding - $containerPaddingMobSm);
+      }
+    }
+  }
+}

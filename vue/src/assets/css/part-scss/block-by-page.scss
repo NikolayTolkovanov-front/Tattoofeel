@@ -1,0 +1,33 @@
+@import 'vars';
+
+#body {
+  .page-home--box-category {
+    padding-top: 1px;
+    
+    @media (max-width: 420px) {
+      &__container {
+        .category-tile__list {
+          transform: none !important;
+        }
+      }
+    }
+  }
+
+  .page-catalog--sec-category {
+    padding-bottom: 42px;
+
+    @media (max-width: 767.98px) {
+        padding-bottom: 15px;
+    }
+  }
+
+  .page-brand--box {
+    padding-top: 1px;
+
+    @media (max-width: 767.98px) {
+      padding-bottom: 40px;
+    }
+  }
+
+
+}

@@ -1,0 +1,36 @@
+@import '../_vars';
+
+.pop-mes {
+  position: fixed;
+  z-index: 10000;
+  top: 90px;
+  right: 0;
+  user-select: none;
+
+  &__item {
+    display: block;
+    margin: 20px 0;
+    min-width: 150px;
+    max-width: 300px;
+    font-size: 13px;
+    color: @white;
+    background: #545454;
+    padding: 23px 15px 23px 28px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    & > a {
+      color: @orange;
+      text-decoration: underline;
+    }
+
+    &:before {
+      content: "";
+      border-left: 3px solid #f8cd4f;
+      position: absolute;
+      height: 100%;
+      top: 0;
+      left: 4px;
+    }
+  }
+}

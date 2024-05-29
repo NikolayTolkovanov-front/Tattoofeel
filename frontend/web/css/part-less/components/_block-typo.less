@@ -1,0 +1,68 @@
+@import '../_vars';
+
+.block-typo {
+  strong, b {
+    font-weight: 900;
+  }
+  em, i {
+    font-style: italic;
+  }
+  ul, ol {
+    margin: 1.2em 0;
+  }
+  ul li {
+    position: relative;
+    padding: 1px 0 1px 23px;
+  }
+  ul li:before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(/img/check.png) no-repeat;
+    background-size: cover;
+    left: 0;
+    position: absolute;
+    top: 3px;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-weight: 900;
+    margin: 0.5em 0;
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 900;
+    margin: 0 0 0.5em;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 900;
+    margin: 0 0 0.5em;
+  }
+  h4,h5,h6 {
+    font-size: 18px;
+    font-weight: 900;
+    margin: 0 0 0.5em;
+  }
+
+  h6, h5 {
+    font-size: 1em;
+    margin: 1.2em 0;
+  }
+
+  p {
+    margin: 0.75em 0;
+  }
+  a {
+    color: @orange;
+    border-bottom: 1px solid @orange;
+
+    &:hover {
+      border: 0;
+    }
+  }
+}

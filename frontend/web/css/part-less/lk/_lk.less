@@ -1,0 +1,326 @@
+@import "../_vars";
+
+@lkBoxPaddingLr: 60px;
+
+.lk {
+
+  &-menu {
+    background: @mainBgColor;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+    & > * {
+      display: block;
+      font-size: 17px;
+      font-weight: 700;
+      color: @black;
+      padding: 15px 30px;
+      border-top: 2px solid @lightGray;
+      transition: background .2s;
+
+      &:hover, &.-active {
+        background: @orange;
+      }
+
+      &.-act {
+        cursor: default;
+      }
+
+      &:first-child {
+        border: 0;
+      }
+    }
+  }
+
+  &__box {
+    background: @mainBgColor;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px @lkBoxPaddingLr;
+
+    [class^=h] {
+      margin-top: 0;
+    }
+  }
+
+  &-register-fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    [type="text"], [type="password"] {
+      flex: 0 0 49%;
+      box-sizing: border-box;
+      margin: 10px 0;
+      background: #fbfbfb;
+      border: 0;
+      outline: none;
+      font-size: 15px;
+      color: @brown;
+      padding: 10px 15px;
+    }
+  }
+
+  &-register-btn, &-login-remember {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+
+    & > div {
+      flex: 0 0 49%;
+    }
+
+    .btn {
+      box-sizing: border-box;
+      width: 100%;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+  }
+  &-login-remember {
+    margin: 0 15px;
+  }
+
+  &-login-soc {
+    margin: 20px 0;
+
+    &__btn {
+      margin: 10px 0;
+    }
+    &__btn a {
+      display: inline-block;
+      margin-right: 10px;
+      background: @brown;
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
+      text-align: center;
+    }
+    &__btn .icon {
+      vertical-align: middle;
+    }
+  }
+
+  &-profile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -10px;
+
+    &__input {
+      box-sizing: border-box;
+      flex: 0 0 50%;
+      padding: 0 10px;
+      position: relative;
+      margin: 13px 0;
+
+      label {
+        display: block;
+        font-size: 13px;
+        height: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      input {
+        outline: none;
+        border: 0;
+        background: @lightGray1;
+        font-size: 13px;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        height: 32px;
+        line-height: 32px;
+        padding: 0 35px 0 15px;
+        position: relative;
+        z-index: 0;
+      }
+
+      span {
+        position: absolute;
+        z-index: 5;
+        width: 18px;
+        height: 18px;
+        top: 21px;
+        right: 18px;
+        background: url(/img/svg/edit.svg) no-repeat center;
+        background-size: contain;
+        cursor: default;
+      }
+    }
+  }
+
+  &-profile-btn {
+    margin-top: 20px;
+    text-align: right;
+
+    .btn {
+      min-width: 200px;
+      margin-left: 10px;
+    }
+  }
+
+  &-table-card {
+    display: flex;
+
+    & > span {
+      height: 56px;
+      width: 70px;
+      margin-right: 15px;
+      border: 1px solid @lightGrayD;
+      background: no-repeat center;
+      background-size: contain;
+    }
+
+    &__head {
+      font-size: 13px;
+      font-weight: 700;
+      margin-top: 7px;
+
+      span {
+        display: block;
+        font-weight: 400;
+      }
+    }
+
+  }
+
+  &-cart-comment-form {
+    margin: 40px 0;
+  }
+
+  &-cart-total {
+    text-align: right;
+    font-size: 15px;
+    margin: 20px 0;
+
+    & > span {
+      font-weight: 700;
+      font-size: 19px;
+      margin-left: 10px;
+    }
+  }
+
+// here
+  &-cart-coupon {
+    position: relative;
+
+    & > input[type="text"] {
+      outline: none;
+      border: 1px solid #e4e4e4;
+      border-right: 0;
+      background: #fbfbfb;
+      height: 38px;
+      line-height: 38px;
+      /*width: 100%;*/
+      padding-right: 30px;
+      padding-left: 15px;
+      box-sizing: border-box;
+      font-size: 16px;
+      font-weight: 400;
+      font-family: "Museo Sans Cyrl", sans-serif;
+      color: inherit;
+    }
+  }
+
+  &-cart-del-coupon {
+    color: #fff;
+    position: absolute;
+    background: #ff3838;
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    line-height: 1.5em;
+    left: 180px;
+    top: 9px;
+    cursor: pointer;
+
+    & > button {
+      font-weight: 400;
+      margin-left: -4px;
+    }
+  }
+
+  &-cart-coupon-msg {
+    padding-top: 5px;
+  }
+    
+  &-cart-coupon-msg.error {
+    color: #ff3838;
+  }
+
+  &-table {
+    display: table;
+    width: 100%;
+
+    &-wrap {
+      margin: 20px -@lkBoxPaddingLr;
+      border-bottom: 1px solid @lightGray1;
+    }
+
+    & > * {
+      display: table-row;
+    }
+    & > * > * {
+      display: table-cell;
+      padding: 27px 15px 11px;
+      border-bottom: 1px solid @lightGray1;
+      vertical-align: top;
+
+      &:first-child {
+        padding-left: @lkBoxPaddingLr;
+      }
+      &:last-child {
+        padding-right: @lkBoxPaddingLr;
+      }
+    }
+
+    &__head {
+      background: @lightGray1;
+      font-weight: 700;
+
+      & > * {
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+    }
+
+    &__row &-fd-sum {
+      font-size: 15px;
+      font-weight: 700;
+      padding-top: 30px;
+      white-space: nowrap;
+    }
+    &__row &-fd-name {
+      padding-top: 11px;
+    }
+    &-fd-def.-act &-fd-def__put {
+        display: none;
+    }
+    &-fd-def:not(.-act) &-fd-def__unput {
+        display: none;
+    }
+
+    &-fd-qty .in-stock {
+      display: block;
+      color: @red;
+      font-size: 11px;
+      white-space: nowrap;
+      line-height: 12px;
+      margin-top: 7px;
+      .icon {
+        position: relative;
+        top: -2px;
+      }
+    }
+  }
+
+}
+
+.help-block-error {
+  font-size: 11px;
+  color: #b94949;
+  margin: 0.3rem 0;
+}
+

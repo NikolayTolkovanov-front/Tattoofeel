@@ -1,0 +1,39 @@
+@import 'vars';
+
+.breadcrumbs {
+  display: flex;
+  padding: 12px 0 0 0;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+
+  &._short {
+    padding-right: 30%;
+  }
+
+  li {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: $gray;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border: 1px solid $gray;
+      border-left: 0;
+      border-bottom: 0;
+      transform: rotate(45deg);
+      position: relative;
+      left: -11px;
+      top: -1px;
+    }
+
+    &:first-child {
+      margin-left: 0;
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
